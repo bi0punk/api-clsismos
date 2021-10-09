@@ -1,2 +1,2 @@
 # api-clsismos
-api que muetra ultimos sismos en formato json
+api que muestra ultimos sismos en formato json
