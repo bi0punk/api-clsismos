@@ -16,10 +16,6 @@ def api():
     print(data)
 
 
-   
-    
-
-
     return jsonify({"gooood" : "nashe"})
     """ return jsonify(df) """
 
