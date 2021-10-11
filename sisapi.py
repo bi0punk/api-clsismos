@@ -19,9 +19,7 @@ def api():
 
     table_data = sopita.find('table')
 
-
     print(table_data)
-
 
     headers = []
     for i in table_data.find_all('th'):
@@ -35,19 +33,46 @@ def api():
         row = [tr.text for tr in row_data]
         length = len(df)
         df.loc[length] = row
-    print(df)
-
-    result = df.to_json(orient="split")
-
-    parsed = json.loads(result)
-
-    json.dumps(parsed, indent=4)  
-
-    print(result)
+    """ print(df) """
+    df_lista = df.to_numpy().tolist()
+    print(df_lista)
 
 
 
-    return jsonify(table_data)
+
+
+
+
+
+#Convertimos df a formato json para poder operar
+
+    resultdataframe = df.to_json(orient="split")
+
+    pars = json.loads(resultdataframe)
+
+    json.dumps(pars, indent=4)  
+
+
+    """ print(resultdataframe) """
+
+
+    return jsonify (resultdataframe)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     """return jsonify({"gooood" : "nashe"})"""
     """ return jsonify(df) """
 
