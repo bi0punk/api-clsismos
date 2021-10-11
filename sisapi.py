@@ -15,15 +15,12 @@ def api():
     page = requests.get(url)
 
 
-
     sopita = BeautifulSoup(page.text, 'lxml')
 
     table_data = sopita.find('table')
 
 
     print(table_data)
-
-
 
 
     headers = []
@@ -55,4 +52,4 @@ def api():
     """ return jsonify(df) """
 
 if __name__ == '__main__':
-    app.run(debug=True, port=4000)
+    app.run(debug=True)
