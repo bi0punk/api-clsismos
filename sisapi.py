@@ -36,7 +36,7 @@ def api():
 
     df_lista = df.to_numpy().tolist() #lista por filas
     df_lista2 = df.to_numpy().transpose().tolist() #listas por columnas 
-    print(df_lista)
+    """ print(df_lista) """
     print()
 
 
