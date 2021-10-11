@@ -33,7 +33,7 @@ def api():
         row = [tr.text for tr in row_data]
         length = len(df)
         df.loc[length] = row
-    """ print(df) """
+
     df_lista = df.to_numpy().tolist() #lista por filas
     df_lista2 = df.to_numpy().transpose().tolist() #listas por columnas 
     print(df_lista)
@@ -43,20 +43,21 @@ def api():
 #Convertimos df a formato json para poder operar
 
     resultdataframe = df.to_json(orient="split")
-
     pars = json.loads(resultdataframe)
-
     json.dumps(pars, indent=4)  
 
 
-    """ print(resultdataframe) """
-
     return jsonify (df_lista)
-    """ return jsonify (resultdataframe) """
+   
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+
+    #?
 
 
     """return jsonify({"gooood" : "nashe"})"""
     """ return jsonify(df) """
-
-if __name__ == '__main__':
-    app.run(debug=True)
+    """ return jsonify (resultdataframe) """
+    """ print(resultdataframe) """
